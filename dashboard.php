@@ -37,9 +37,8 @@ $deadlines = $projects->fetchAll();
         </div>
 
         <div class="card">
-            <h2>Nieuwe taak</h2>
             <a href="create-project.php">
-                <button>Project aanmaken</button>
+                <button>Nieuwe taak</button>
             </a>
         </div>
 

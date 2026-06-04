@@ -31,6 +31,7 @@ $tasks = $stmt->fetchAll();
                     <h3><?php echo $task['title']; ?></h3>
                     <p><?php echo $task['description']; ?></p>
                     <small><?php echo $task['assigned_to']; ?></small>
+                    <a href="delete-task.php?id=<?= $task['id']; ?>"> Verwijderen</a>
                 </div>
 
             <?php endif; ?>
