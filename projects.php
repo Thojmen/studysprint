@@ -30,7 +30,6 @@ if(isset($_GET['delete'])) {
 
 <div class="content">
     <h1>Projecten</h1>
-
     <?php foreach($projects as $project): ?>
 
         <div class="project-card">
@@ -44,8 +43,11 @@ if(isset($_GET['delete'])) {
             <a href="projects.php?delete=<?php echo $project['id']; ?>">
                 Verwijderen
             </a>
-        </div>
 
+            <a href="edit-project.php?id=<?= $project['id'] ?>">
+                Bewerken
+            </a>
+        </div>
     <?php endforeach; ?>
 </div>
 

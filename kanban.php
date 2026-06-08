@@ -79,6 +79,11 @@ $tasks = $stmt->fetchAll();
                         Verwijderen
                     </a>
 
+                    <a href="edit-task.php?id=<?php echo $task['id']; ?>">
+                        Bewerken
+                    </a>
+
+                    <br><br>
                 </div>
 
             <?php endif; ?>
