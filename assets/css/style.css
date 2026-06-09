@@ -1,98 +1,286 @@
-body {
-    margin-left: 270px;
-    padding: 20px;
-    width: 100%;
+/* Algemene instellingen */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.card-container {
-    display: flex;
-    gap: 20px;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    color:#333;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+/* Sidebar */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100vh;
+    background:#2c3e50;
+    padding:20px;
 }
 
-.project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.sidebar h2{
+    color:white;
+    margin-bottom:30px;
 }
 
-.kanban-board {
-    display: flex;
-    gap: 20px;
-    margin-left: 270px;
-    padding: 20px;
+.sidebar a,
+.sidebar button{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:12px;
+    margin-bottom:10px;
+    border:none;
+    background:none;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.column {
-    background: #ddd;
-    padding: 20px;
-    width: 300px;
-    border-radius: 10px;
+.sidebar a:hover,
+.sidebar button:hover{
+    background:#34495e;
 }
 
-.task {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+/* Content */
+
+.content{
+    margin-left:270px;
+    padding:30px;
 }
 
-.login-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content h1{
+    margin-bottom:25px;
 }
 
-.login-container form {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    width: 300px;
+/* Dashboard cards */
+
+.card-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+.card{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    min-width:300px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-button {
-    padding: 10px 20px;
-    cursor: pointer;
+.card h2{
+    margin-bottom:15px;
 }
+
+/* Project kaarten */
+
+.project-card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.project-card h2{
+    margin-bottom:10px;
+}
+
+.project-card a{
+    display:inline-block;
+    margin-right:15px;
+    margin-top:10px;
+    text-decoration:none;
+    color:#3498db;
+}
+
+.project-card a:hover{
+    text-decoration:underline;
+}
+
+/* Formulieren */
+
+form{
+    background:white;
+    max-width:600px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+
+textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+/* Knoppen */
+
+button{
+    background:#3498db;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+/* Login & Register */
+
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.login-container form{
+    width:400px;
+}
+
+.login-container h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* Kanban */
 
 .kanban-board{
     display:flex;
     gap:20px;
-    margin-top:20px;
+    align-items:flex-start;
 }
 
 .column{
     flex:1;
-    min-height:500px;
-    background:#ececec;
-    border-radius:10px;
+    background:#e9ecef;
     padding:15px;
+    border-radius:10px;
+    min-height:600px;
+}
+
+.column h2{
+    margin-bottom:15px;
 }
 
 .task{
     background:white;
-    border-radius:10px;
     padding:15px;
+    border-radius:8px;
     margin-bottom:15px;
     cursor:grab;
-    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
 }
 
-.task:hover{
-    transform:scale(1.02);
+.task h3{
+    margin-bottom:10px;
+}
+
+.task p{
+    margin-bottom:10px;
+}
+
+.task a{
+    text-decoration:none;
+    color:#3498db;
+    font-size:14px;
+}
+
+.task a:hover{
+    text-decoration:underline;
+}
+
+/* Agenda */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+table th{
+    background:#2c3e50;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+/* Mobiel */
+
+@media(max-width:900px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .content{
+        margin-left:0;
+    }
+
+    .kanban-board{
+        flex-direction:column;
+    }
+
+    .card-container{
+        flex-direction:column;
+    }
+}
+.week-calendar{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:15px;
+}
+
+.day-card{
+    background:white;
+    min-height:250px;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.day-card h3{
+    margin-bottom:15px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:10px;
+}
+
+.deadline-item{
+    background:#3498db;
+    color:white;
+    padding:8px;
+    margin-bottom:8px;
+    border-radius:5px;
 }
