@@ -30,26 +30,52 @@ if(isset($_POST['save']))
     header("Location: kanban.php?id=$project_id");
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
 
-<form method="POST">
+<?php include 'includes/sidebar.php'; ?>
+    <div class="content">
 
-<input
-type="text"
-name="title"
-placeholder="Taak naam"
-required>
+        <a
+            class="back-button"
+            href="kanban.php?id=<?= $project_id ?>">
+            ← Terug naar Kanban
+        </a>
 
-<textarea
-name="description"
-placeholder="Omschrijving"></textarea>
+        <h1>Nieuwe Taak</h1>
 
-<input
-type="text"
-name="assigned_to"
-placeholder="Persoon">
+        <form method="POST" class="task-form">
 
-<button name="save">
-Opslaan
-</button>
+            <label>Titel</label>
+            <input
+                type="text"
+                name="title"
+                required>
 
-</form>
+            <label>Omschrijving</label>
+            <textarea
+                name="description"></textarea>
+
+            <label>Uitvoerder</label>
+            <input
+                type="text"
+                name="assigned_to">
+
+            <button
+                type="submit"
+                name="create">
+                Taak Opslaan
+            </button>
+
+        </form>
+
+    </div>
+</body>
+</html>
